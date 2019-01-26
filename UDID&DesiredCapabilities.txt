@@ -1,0 +1,12 @@
+UDID
+------------------
+Window-Device&Simulator
+
+deviceName-iphoneX
+udid-567rhrgdb4fevggsdt
+automationName-XCUITest
+platformName-ios
+bundleID:com.facebook.integrationApp
+platformVersion:12.1.31
+xcodeOrgId:LUBWEAQTU
+xcodeSigningId:"iPhone Developer"

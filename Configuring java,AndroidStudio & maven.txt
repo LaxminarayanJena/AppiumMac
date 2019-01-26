@@ -51,9 +51,7 @@ maven path settings
 export PATH=$PATH:$JAVA_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MAVEN_HOME/bin
 save and exit
 
-UDID
-------------------
-Window-Device&Simulator
+
 
 
 
