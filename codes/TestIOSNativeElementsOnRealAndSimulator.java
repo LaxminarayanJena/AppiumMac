@@ -21,6 +21,7 @@ public static IOSDriver driver;
 		
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
 		capabilities.setCapability(MobileCapabilityType.APP, "/Users/Jena/Library/Developer/Xcode/DerivedData/WebDriverAgent-brdadhpuwhzy/Build/Products/Debug-iphoneos/IntegrationApp.app");
+		//capabilities.setCapability(MobileCapabilityType.APP, "/Users/Jena/Library/Developer/Xcode/DerivedData/WebDriverAgent-brdadhpuwhzy/Build/Products/Debug-iphonesimulator/IntegrationApp.app");
 		
 
 		

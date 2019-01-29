@@ -35,14 +35,34 @@ save it
 To install appium through terminal
 npm install -g appium
 
-12)brew install carthage
+https://github.com/appium/appium-xcuitest-driver
+https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md
 
-13)brew install --HEAD libimobiledevice
-14)brew install ideviceinstaller
+
+12)brew install carthage
+13)brew install libimobiledevice --HEAD
+14)brew install ideviceinstaller //only works for ios 9.
+  npm install -g ios-deploy//for ios 10
 15)brew install ios-webkit-debug-proxy
+16)gem install xcpretty
 
 16)ios_webkit_debug_proxy -c 571hdhd677gshsh:27753
 use this to conenct while working with real device
+
+webdriver agent settings
+-------------------------------------
+
+17) cd/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/
+18)mkdir -p Resources/WebDriverAgent.bundle
+19)./Scripts/bootstrap.sh -d
+20)open .
+now open WebDriverAgent.xcodeproj
+Add Your appleid and password
+and click on build now it should give "build suceeded"
+
+To work on real device
+
+ xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=asssns8hdhdndhdnhd' test
 
 maven path settings
 -----------------------------------------
