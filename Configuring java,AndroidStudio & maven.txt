@@ -14,7 +14,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
 
 
-————-----------------android in Mac—————
+
+
+————android in Mac—————
 
 1)install android studio
 
@@ -23,18 +25,17 @@ export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$
 
 
 
----------------appium,iOS in Mac—————————-------
+
+---------------appium,iOS in Mac—————————
 
 
 1)in terminal
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-2)brew install node
+3)brew install node
 
-3)npm install -g appium-doctor
-
-4)appium-doctor
+4)npm install -g appium-doctor
 
 5)npm uninstall -g appium
 npm install -g appium
@@ -52,6 +53,12 @@ Pwd-123Tmnas#
 
 8) brew install Carthage
 
+9)brew install libimobiledevice
+10)npm install -g authorize-ios
+11)npm i -g web pack
+11)brew install ios-deploy
+12)brew install ideviceinstaller
+13)brew install iOS-webkit-debug-proxy
 
 9)initialise web driver agent project
 
@@ -87,15 +94,3 @@ Product-build
 a)sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
 b)instruments -s devices
-
-15)xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=CEA8E936-AD45-4C14-8A2B-A1360434C9B9' test 
-
-16)to start Appium from command line
- Appium
-
-     
-——————————android———————
-brew cask install android-platform-tools
-
-
-
