@@ -1,77 +1,101 @@
-Configuring environment variable for java
-------------------------------------------------------------
-Open terminal
-1)touch.bash-profile
-2)open .bash-profile
-3)export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
-4)export PATH=$PATH:$JAVA_HOME/bin
-5)close bash profile
-6)open bashprofile
-echo $ JAVA-HOME
+——————————————Java settings———————————
 
-Android Studio
---------------------------
-1)install nodejs through brew or directly
-2)install home brew in terminal
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-3)brew install node
-4)npm install -g appium-doctor
- if u get permission issue then only type
-sudo  npm install -g appium-doctor
-5)appium-doctor
-6)go to appstore and download xcode
-7)download android studio.dmg and install in applications
-while installing copy the sdk folder path location
-8)install android sdk package from sdk manager
-9)create system image using avd manager
+1)download 1.8 jdk and install
 
-10)in terminal
- open .bash-profile
-export ANDROID_HOME=/Users/jena/Library/Android/sdk
-export PATH=$PATH:$JAVA_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-save it
+2)OPEN BASH profile
 
-11)Download appium gui desktop and install
-To install appium through terminal
+ touch .bash_profile
+
+ open -a TextEdit.app .bash_profile
+
+3)set path in bashprofile and save
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=${JAVA_HOME}/bin:$PATH
+
+
+————-----------------android in Mac—————
+
+1)install android studio
+
+2)export ANDROID_HOME=/Users/laxminarayanjena/Library/Android/sdk
+export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
+
+
+
+---------------appium,iOS in Mac—————————-------
+
+
+1)in terminal
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+2)brew install node
+
+3)npm install -g appium-doctor
+
+4)appium-doctor
+
+5)npm uninstall -g appium
 npm install -g appium
 
-https://github.com/appium/appium-xcuitest-driver
-https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md
+npm install -g appium@1.12.1
+
+appium -v
+6)xcode-select --install
+
+7)Xcode-preference-account. Add Apple ID
+
+My id -lnarayan.jena@gmail.com
+Pwd-123Tmnas#
 
 
-12)brew install carthage
-13)brew install libimobiledevice --HEAD
-14)brew install ideviceinstaller //only works for ios 9.
-  npm install -g ios-deploy//for ios 10
-15)brew install ios-webkit-debug-proxy
-16)gem install xcpretty
-
-16)ios_webkit_debug_proxy -c 571hdhd677gshsh:27753
-use this to conenct while working with real device
-
-webdriver agent settings
--------------------------------------
-
-17) cd/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/
-18)mkdir -p Resources/WebDriverAgent.bundle
-19)./Scripts/bootstrap.sh -d
-20)open .
-now open WebDriverAgent.xcodeproj
-Add Your appleid and password
-and click on build now it should give "build suceeded"
-
-To work on real device
-
- xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=asssns8hdhdndhdnhd' test
-
-maven path settings
------------------------------------------
-1)open .bash-profile
-2)export MAVEN_HOME=/Users/jena/library/apache-maven-3.3
-export PATH=$PATH:$JAVA_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MAVEN_HOME/bin
-save and exit
+8) brew install Carthage
 
 
+9)initialise web driver agent project
+
+WebDriverAgent driver will be found in 
+
+
+⁨Macintosh HD⁩ ▸ ⁨usr⁩ ▸ ⁨local⁩ ▸ ⁨lib⁩ ▸ ⁨node_modules⁩ ▸ ⁨appium⁩ ▸ ⁨node_modules⁩ ▸ ⁨appium-xcuitest-drive⁩r/WebDriverAgent 
+
+
+/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent   
+
+For Appium Desktop
+/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent 
+
+10)cd /usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/
+
+
+mkdir -p Resources/WebDriverAgent.bundle
+./Scripts/bootstrap.sh -d
+
+11)open web driver agent project in Xcode
+   Add automatic signinging in wedriver agent lib and web driver agent runner
+
+If u get provising ing profile error then in build settings - in packaging in product bundle identifier change the name to com.jena.WebDriverAgentRunner
+
+12)product-clean
+Product-build
+
+13)now run the app using simulator
+
+14)to get list of all udid
+
+a)sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+b)instruments -s devices
+
+15)xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=CEA8E936-AD45-4C14-8A2B-A1360434C9B9' test 
+
+16)to start Appium from command line
+ Appium
+
+     
+——————————android———————
+brew cask install android-platform-tools
 
 
 
