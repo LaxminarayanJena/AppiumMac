@@ -15,6 +15,10 @@ export PATH=${JAVA_HOME}/bin:$PATH
 
 ——————————————maven settings———————————
 brew install maven
+
+in bash profile save-
+export PATH=/usr/local/Cellar/maven/3.6.1/bin:$PATH
+
 mvn -version
 
 
