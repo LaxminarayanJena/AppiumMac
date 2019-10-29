@@ -1,6 +1,8 @@
 # AppiumMac
-Logs
-From itunes-sync </br>
-~/Library/Logs/CrashReporter/MobileDevice
+Logs </br>
+In ios mobile logs present in -settings- privacy- analytics -analytics -data </br>
 
-settings- privacy- analytics -analytics -data
+
+From itunes-sync </br>
+~/Library/Logs/CrashReporter/MobileDevice </br>
+In windows-C:\Users\username\AppData\Roaming\Apple Computer\Logs\CrashReporter\MobileDevice\ </br>
