@@ -13,6 +13,9 @@
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
 
+in cmd  source ~/.bash_profile
+appium --address 127.0.0.1 --port 4723 
+
 ——————————————maven settings———————————
 brew install maven
 
