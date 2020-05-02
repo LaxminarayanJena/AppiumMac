@@ -128,3 +128,24 @@ b)instruments -s devices
   "app": "com.discovery.mobile.enterprise.tlc",
   "udid": "5d50b7a22771f9af43e1dde31cb54ea4ab21794e"
 }
+--------------------------------------------------------------------------------------------------------
+
+Build a single view app
+xcodebuild  -showsdks
+
+Go to project location and 
+xcodebuild -sdk iphonesimulator13.4
+
+Copy the app path from terminal
+/Users/vivektiwari/Desktop/jenaapp/build/Release-iphonesimulator/jenaapp.app
+
+
+START APPIUM desktop with below capabilities
+{
+  "deviceName": "iPhone 11",
+  "platformName": "iOS",
+  "platformVersion": "13.4",
+  "app": "/Users/vivektiwari/Desktop/jenaapp/build/Release-iphonesimulator/jenaapp.app",
+  "noReset": true,
+  "automationName": "XCUITest"
+}
