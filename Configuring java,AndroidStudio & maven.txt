@@ -76,11 +76,14 @@ WebDriverAgent driver will be found in
 
 ⁨Macintosh HD⁩ ▸ ⁨usr⁩ ▸ ⁨local⁩ ▸ ⁨lib⁩ ▸ ⁨node_modules⁩ ▸ ⁨appium⁩ ▸ ⁨node_modules⁩ ▸ ⁨appium-xcuitest-drive⁩r/WebDriverAgent 
 
-
+ For appium console 
 /usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent   
 
-For Appium Desktop
-/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent 
+For Appium gui desktop 1.15.1
+cd /Applications/Appium.app/Contents/Resources/app/node_modules/appium-webdriveragent 
+
+1.17
+/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-webdriveragent
 
 10)cd /usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/
 
@@ -91,7 +94,16 @@ mkdir -p Resources/WebDriverAgent.bundle
 11)open web driver agent project in Xcode
    Add automatic signinging in wedriver agent lib and web driver agent runner
 
-If u get provising ing profile error then in build settings - in packaging in product bundle identifier change the name to com.jena.WebDriverAgentRunner
+In Xcode
+
+Web driver agent lib 
+Bundle identifier -com.poltutapu.WebDriverAgentLib
+
+Web driver agent runner
+
+Bundle identifier -com.poltutapu.WebDriverAgentLib
+
+xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=5d50b7a22771f9af43e1dde31cb54ea4ab21794e' test
 
 12)product-clean
 Product-build
