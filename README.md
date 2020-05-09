@@ -9,3 +9,6 @@ In windows-C:\Users\username\AppData\Roaming\Apple Computer\Logs\CrashReporter\M
 
 
 udid-    idevice_id -l
+
+bundleid - go to console app in mac and search the app name
+udid-
