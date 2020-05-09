@@ -149,3 +149,4 @@ START APPIUM desktop with below capabilities
   "noReset": true,
   "automationName": "XCUITest"
 }
+/usr/bin/killall -KILL node
