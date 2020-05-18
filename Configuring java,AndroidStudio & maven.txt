@@ -13,6 +13,9 @@
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
 
+in cmd  source ~/.bash_profile
+appium --address 127.0.0.1 --port 4723 
+
 ——————————————maven settings———————————
 brew install maven
 
@@ -73,11 +76,14 @@ WebDriverAgent driver will be found in
 
 ⁨Macintosh HD⁩ ▸ ⁨usr⁩ ▸ ⁨local⁩ ▸ ⁨lib⁩ ▸ ⁨node_modules⁩ ▸ ⁨appium⁩ ▸ ⁨node_modules⁩ ▸ ⁨appium-xcuitest-drive⁩r/WebDriverAgent 
 
-
+ For appium console 
 /usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent   
 
-For Appium Desktop
-/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent 
+For Appium gui desktop 1.15.1
+cd /Applications/Appium.app/Contents/Resources/app/node_modules/appium-webdriveragent 
+
+1.17
+/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-webdriveragent
 
 10)cd /usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/
 
@@ -88,7 +94,16 @@ mkdir -p Resources/WebDriverAgent.bundle
 11)open web driver agent project in Xcode
    Add automatic signinging in wedriver agent lib and web driver agent runner
 
-If u get provising ing profile error then in build settings - in packaging in product bundle identifier change the name to com.jena.WebDriverAgentRunner
+In Xcode
+
+Web driver agent lib 
+Bundle identifier -com.poltutapu.WebDriverAgentLib
+
+Web driver agent runner
+
+Bundle identifier -com.poltutapu.WebDriverAgentLib
+
+xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=5d50b7a22771f9af43e1dde31cb54ea4ab21794e' test
 
 12)product-clean
 Product-build
@@ -100,3 +115,38 @@ Product-build
 a)sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
 b)instruments -s devices
+-----------------------------------------------------------------------
+
+
+/usr/bin/killall -KILL node
+
+
+{
+  "platformName": "iOS",
+  "platformVersion": "12.4.1",
+  "deviceName": "iPhone",
+  "app": "com.discovery.mobile.enterprise.tlc",
+  "udid": "5d50b7a22771f9af43e1dde31cb54ea4ab21794e"
+}
+--------------------------------------------------------------------------------------------------------
+
+Build a single view app
+xcodebuild  -showsdks
+
+Go to project location and 
+xcodebuild -sdk iphonesimulator13.4
+
+Copy the app path from terminal
+/Users/vivektiwari/Desktop/jenaapp/build/Release-iphonesimulator/jenaapp.app
+
+
+START APPIUM desktop with below capabilities
+{
+  "deviceName": "iPhone 11",
+  "platformName": "iOS",
+  "platformVersion": "13.4",
+  "app": "/Users/vivektiwari/Desktop/jenaapp/build/Release-iphonesimulator/jenaapp.app",
+  "noReset": true,
+  "automationName": "XCUITest"
+}
+/usr/bin/killall -KILL node
