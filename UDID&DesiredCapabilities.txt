@@ -10,3 +10,20 @@ bundleID:com.facebook.integrationApp
 platformVersion:12.1.31
 xcodeOrgId:LUBWEAQTU
 xcodeSigningId:"iPhone Developer"
+
+
+resolve appium spinning issues---
+{
+  "bundleId": "com.XXX",
+  "platformName": "iOS",
+  "deviceName": "iPhone 8",
+  "platformVersion": "12.0.1",
+  "automationName": "XCUITest",
+  "xcodeOrgId": "9XXXX9",
+  "udid": "7XXXXb",
+  "waitForQuiescence": false,
+  "waitForQuietness": false,
+  "wdaEventloopIdleDelay": 7,
+  "eventLoopIdleDelaySec": 4,
+  "startIWDP": true
+}
